@@ -11,6 +11,12 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBAction func gotoTreePage(_ sender: Any) {
+        // 移動先のビューコントローラーを参照する
+        let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "treePage")
+        // トランジションの映像効果を指定する
+        nextVC?.modalTransitionStyle = .flipHorizontal
+        // シーンを移動する
+        present(nextVC!, animated: true, completion: nil)
     }
     
     
